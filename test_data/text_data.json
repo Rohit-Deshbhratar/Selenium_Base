@@ -1,0 +1,14 @@
+{
+  "test1": {
+  "blank_text" : "Rohit",
+  "text_area" : "This is text area.",
+  "prefilled_text" : "This is new text.",
+  "placeholder_text" : "Hello"
+  },
+  "test2": {
+  "blank_text" : "JSON",
+  "text_area" : "Data is loading from .yaml file",
+  "prefilled_text" : "file name is 'text_data.yaml'",
+  "placeholder_text" : "Bye"
+  }
+}
