@@ -29,7 +29,7 @@ def setup(request, browser):
 
         driver = webdriver.Firefox(options=option, service=service)
 
-    driver.get("https://seleniumbase.io/demo_page02")
+    driver.get("https://seleniumbase.io/demo_page")
     driver.maximize_window()
     request.cls.driver = driver
     yield
