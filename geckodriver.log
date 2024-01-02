@@ -1239,6 +1239,7 @@ DevTools listening on ws://127.0.0.1:52696/devtools/browser/50ae3626-8e25-4a6a-9
 1704173650110	Marionette	INFO	Stopped listening on port 52704
 Dynamically enable window occlusion 1
 1704173651818	geckodriver	INFO	Listening on 127.0.0.1:52744
+<<<<<<< Updated upstream
 1704173654870	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52745" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Rohit\\AppData\\Local\\Temp\\rust_mozprofilea1Odbk"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
@@ -1304,4 +1305,6 @@ DevTools listening on ws://127.0.0.1:52966/devtools/browser/d09851ec-8462-4a51-9
 1704173698727	Marionette	INFO	Stopped listening on port 52975
 Dynamically enable window occlusion 1
 1704173700087	geckodriver	INFO	Listening on 127.0.0.1:53019
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
