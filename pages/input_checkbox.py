@@ -1,10 +1,15 @@
+import logging
+
 import pytest
 from selenium.webdriver.common.by import By
 from base.base_driver import BaseDriver
+from utilities.utils import Utils
 
 
 @pytest.mark.usefixtures("setup")
 class CheckBox(BaseDriver):
+    log = Utils.custom_logger(log_level=logging.DEBUG)
+
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
@@ -27,7 +32,7 @@ class CheckBox(BaseDriver):
 
     def click_prechecked_checkbox(self):
         status = self.find_pre_checked_checkbox().is_selected()
-        print(f"Status of pre checked checkbox: {status}")
+        self.log.info(f"Status of pre checked checkbox: {status}")
         self.find_pre_checked_checkbox().click()
 
     def click_checkbox_group(self):

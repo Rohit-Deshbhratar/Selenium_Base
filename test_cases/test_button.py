@@ -1,5 +1,4 @@
 import time
-
 import pytest
 import softest
 from pages.input_button import Button

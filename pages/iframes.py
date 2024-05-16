@@ -1,8 +1,12 @@
+import logging
 from selenium.webdriver.common.by import By
 from base.base_driver import BaseDriver
+from utilities.utils import Utils
 
 
 class Iframes(BaseDriver):
+    log = Utils.custom_logger(log_level=logging.DEBUG)
+
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
@@ -25,7 +29,7 @@ class Iframes(BaseDriver):
 
     def set_text_inside_iframe(self):
         value = self.get_text_inside_iframe()
-        print(f"Text inside iframe: {value.get_attribute('innerHTML')}")
+        self.log.info(f"Text inside iframe: {value.get_attribute('innerHTML')}")
 
     def set_inside_iframe(self):
         self.get_checkbox_inside_iframe().click()

@@ -1,9 +1,12 @@
+import logging
 from selenium.webdriver.common.by import By
-
+from utilities.utils import Utils
 from base.base_driver import BaseDriver
 
 
 class Button(BaseDriver):
+    log = Utils.custom_logger(log_level=logging.DEBUG)
+
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
@@ -11,6 +14,7 @@ class Button(BaseDriver):
     INPUT_BUTTON = "//*[@id='myButton']"
     READ_ONLY_TEXT = "//input[@id='readOnlyText']"
     PARAGRAPH_WITH_TEXT = "//p[@id='pText']"
+
     # READ_ONLY_TEXT = "The Color is Purple"
     # PARAGRAPH_TEXT = "This Text is Purple"
 
@@ -28,11 +32,11 @@ class Button(BaseDriver):
 
     def set_read_only_text(self):
         text_value = self.get_read_only_text()
-        print(f"Read only text: {text_value.get_attribute('value')}")
+        self.log.info(f"Read only text: {text_value.get_attribute('value')}")
 
     def set_paragraph_text(self):
         para_value = self.get_paragraph_text().text
-        print(f"Paragraph text: {para_value}")
+        self.log.info(f"Paragraph text: {para_value}")
 
     def check_texts(self):
         self.set_input_button()

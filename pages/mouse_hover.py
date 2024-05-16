@@ -1,10 +1,14 @@
+import logging
 import time
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from base.base_driver import BaseDriver
+from utilities.utils import Utils
 
 
 class MouseHover(BaseDriver):
+    log = Utils.custom_logger(log_level=logging.DEBUG)
+
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
@@ -41,21 +45,21 @@ class MouseHover(BaseDriver):
         self.get_hover_dropdown()
         self.get_hover_dropdown_one()
         text_value = self.driver.find_element(By.XPATH, self.OPTION_ONE_TEXT)
-        print(f"You clicked: {text_value.get_attribute('innerHTML')}")
+        self.log.info(f"You clicked: {text_value.get_attribute('innerHTML')}")
         time.sleep(1)
 
     def click_hover_option_two(self):
         self.get_hover_dropdown()
         self.get_hover_dropdown_two()
         text_value = self.driver.find_element(By.XPATH, self.OPTION_TWO_TEXT)
-        print(f"You clicked: {text_value.get_attribute('innerHTML')}")
+        self.log.info(f"You clicked: {text_value.get_attribute('innerHTML')}")
         time.sleep(2)
 
     def click_hover_option_three(self):
         self.get_hover_dropdown()
         self.get_hover_dropdown_three()
         text_value = self.driver.find_element(By.XPATH, self.OPTION_THREE_TEXT)
-        print(f"You clicked: {text_value.get_attribute('innerHTML')}")
+        self.log.info(f"You clicked: {text_value.get_attribute('innerHTML')}")
         time.sleep(3)
 
     def click_menu_options(self):

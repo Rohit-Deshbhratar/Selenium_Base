@@ -1,5 +1,7 @@
-from openpyxl import load_workbook
 import csv
+import inspect
+import logging
+from openpyxl import load_workbook
 
 
 class Utils:
@@ -31,3 +33,19 @@ class Utils:
             data_list.append(rows)
         return data_list
 
+    def custom_logger(log_level=logging.DEBUG):
+        # set class/method name from where it is called
+        logger_name = inspect.stack()[1][3]
+        # create logger
+        logger = logging.getLogger(logger_name)
+        logger.setLevel(log_level)
+        # create file handler and set log level
+        fh = logging.FileHandler("selenium_base.log")
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s : %(message)s',
+                                      datefmt='%m/%d/%Y %I:%M:%S %p')
+        # add formatter to file handler
+        fh.setFormatter(formatter)
+
+        # add file handler to logger
+        logger.addHandler(fh)
+        return logger
